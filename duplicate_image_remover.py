@@ -11,12 +11,17 @@ class DuplicateImageRemover:
         self.lock = threading.Lock()
         self.progress_lock = threading.Lock()  # Dodatkowa blokada dla paska postępu
         self.progress = 0  # Zmienna śledząca postęp
+        self._percentage = 0.95
 
     def set_directory(self, new_directory):
         if isinstance(new_directory, bytes):
             self.directory = new_directory.decode('utf-8')
         else:
             self.directory = new_directory
+            
+    def set_percentage(self, percentage):
+        self._percentage = 1 - (percentage / 100)
+        print(self._percentage)
 
     def are_images_identical(self, img1=None, img2=None, threshold=0.95):
         if img1 is None or img2 is None:
@@ -77,7 +82,7 @@ class DuplicateImageRemover:
             for future in futures:
                 future.result()  # Poczekaj na zakończenie wszystkich wątków
     
-    def are_images_similar(self, img1, img2, similarity_threshold=0.9):
+    def are_images_similar(self, img1, img2):
         """
         Sprawdza, czy dwa obrazy są podobne w stopniu określonym przez próg podobieństwa.
 
@@ -88,7 +93,7 @@ class DuplicateImageRemover:
         """
         if img1.shape != img2.shape:
             return False
-        return np.sum(img1 != img2) / img1.size <= 1 - similarity_threshold
+        return np.sum(img1 != img2) / img1.size <= self._percentage
 
 if __name__ == '__main__':
     def progress_callback(progress, total):
