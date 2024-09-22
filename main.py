@@ -11,7 +11,7 @@ class DuplicateImageRemoverApp(tk.Tk):
         super().__init__()
         
         self.title("Duplicate Image Remover")
-        self.geometry("400x300")
+        self.geometry("400x250")
         
         self.set_icon()
         
