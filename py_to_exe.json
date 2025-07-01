@@ -7,7 +7,7 @@
   },
   {
    "optionDest": "filenames",
-   "value": "D:/ProgramyPy/remove_duplicate_img/main.py"
+   "value": "D:/ProgramyPy/Duplicate_img_remover/main.py"
   },
   {
    "optionDest": "onefile",
@@ -19,7 +19,7 @@
   },
   {
    "optionDest": "icon_file",
-   "value": "D:/ProgramyPy/remove_duplicate_img/icon.ico"
+   "value": "D:/ProgramyPy/Duplicate_img_remover/icon.ico"
   },
   {
    "optionDest": "clean_build",
@@ -55,11 +55,11 @@
   },
   {
    "optionDest": "datas",
-   "value": "D:/ProgramyPy/remove_duplicate_img/duplicate_image_remover.py;."
+   "value": "D:/ProgramyPy/Duplicate_img_remover/duplicate_image_remover.py;."
   },
   {
    "optionDest": "datas",
-   "value": "D:/ProgramyPy/remove_duplicate_img/icon.ico;."
+   "value": "D:/ProgramyPy/Duplicate_img_remover/icon.ico;."
   }
  ],
  "nonPyinstallerOptions": {
